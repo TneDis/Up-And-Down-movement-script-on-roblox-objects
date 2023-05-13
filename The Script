@@ -1,0 +1,24 @@
+-- Put this script inside a LocalScript within the part you want to move
+
+-- Customize the movement properties
+local initialPosition = script.Parent.Position -- Initial position of the part
+local maxHeight = 5 -- Maximum height to move the part
+local speed = 1 -- Speed of the movement
+
+-- Function to move the part up and down
+local function movePart()
+    while true do
+        -- Move the part up
+        local upTween = game.TweenService:Create(script.Parent, TweenInfo.new(speed), {Position = initialPosition + Vector3.new(0, maxHeight, 0)})
+        upTween:Play()
+        upTween.Completed:Wait()
+        
+        -- Move the part down
+        local downTween = game.TweenService:Create(script.Parent, TweenInfo.new(speed), {Position = initialPosition})
+        downTween:Play()
+        downTween.Completed:Wait()
+    end
+end
+
+-- Call the function to start moving the part
+movePart()
