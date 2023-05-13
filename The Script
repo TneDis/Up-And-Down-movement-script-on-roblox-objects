@@ -1,4 +1,4 @@
--- Put this script inside a LocalScript within the part you want to move
+-- Put this script inside a Script within the part you want to move
 
 -- Customize the movement properties
 local initialPosition = script.Parent.Position -- Initial position of the part
